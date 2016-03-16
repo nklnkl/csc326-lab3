@@ -3,13 +3,21 @@
 
 class Polynomials {
   public:
+
     Polynomials();
     ~Polynomials();
-    int get(int n = 0) const;
-    void create (int d = 0, int n []);
+
+    poly get (int i = 0) const;
+
   private:
-    int * n1;
-    int * n2;
+
+    poly * arr;
+    int size;
+
+    struct poly {
+      int * size;
+      int * arr;
+    };
 }
 
 #endif

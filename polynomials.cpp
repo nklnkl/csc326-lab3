@@ -1,25 +1,19 @@
-#include 'polynomials.cpp';
+#include 'polynomials.cpp'
 
 Polynomials::Polynomials () {
-  n = new int [0];
+  int size = 0;
+  arr = new poly [size];
 };
+
 Polynomials::~Polynomials () {
-  delete [] n;
+  for (int i = 0; i < size; i++) {
+    delete [] arr[i].arr;
+    delete [] arr[i].size;
+  }
+  delete [] arr;
 };
 
-int Polynomials::get (int n) const {
-  switch (n) {
-    case 1:
-      return n1;
-      break;
-    case 2:
-      return n2:
-      break;
-    default:
-      return n1;
-      break;
-  }
-}
-
-void Polynomials::create (int d, int n []) {
+poly Polynomials::get (int i) const {
+  if (i >= 0 && i < size) return arr[i];
+  else return 0;
 };

@@ -1,7 +1,9 @@
 #include <iostream>
 #include "reverse.cpp"
-#include "polynomials.cpp"
 using namespace std;
+
+int reverse ();
+int polynomials ();
 
 int main () {
   int command = 1;
@@ -19,18 +21,12 @@ int main () {
       }
 
       case 1: {
-        Reverse reverse;
-        int n = 0, m = 0;
-        cout << "Enter number: ";
-        cin >> n;
-        cout << "1) Interation." << endl << "2) Recursion." << endl << "Method: ";
-        cin >> m;
-        cout << "Reversed number: " << reverse.rev(n, m) << endl;
+        reverse();
         break;
       }
 
       case 2: {
-        cout << "nothing" << endl;
+        polynomials();
         break;
       }
 
@@ -40,3 +36,18 @@ int main () {
   }
   return 0;
 };
+
+int reverse () {
+  Reverse reverse;
+  int n = 0, m = 0;
+  cout << "Enter number: ";
+  cin >> n;
+  cout << "1) Interation." << endl << "2) Recursion." << endl << "Method: ";
+  cin >> m;
+  cout << "Reversed number: " << reverse.rev(n, m) << endl;
+  return 0;
+}
+
+int polynomials () {
+
+}
