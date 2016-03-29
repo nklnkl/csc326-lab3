@@ -13,12 +13,12 @@ bool Polynomial::add (int * addend, int addendSize) {
   int * sum;
   int sumSize;
 
-  if (addendSize > size)
+  if ( !size || addendSize > size)
     sumSize = addendSize;
   else
     sumSize = size;
   sum = new int [sumSize];
-
+  
   for (int i = 0; i < sumSize; i++) {
     *(sum + i) = 0;
     if (*(addend + i))
@@ -61,8 +61,11 @@ string Polynomial::print () const {
 
       // If the current index is not zero.
       if (i != 0) {
-        // Append the 'x to the power' & '+'.
-        str += "x^" + intToString(i) + " + ";
+        str += "x";
+        // Append x ^ if not first degree.
+        if (i != 1)
+          str += "^" + intToString(i);
+        str += " + ";
       }
     }
   }
