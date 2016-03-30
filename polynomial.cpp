@@ -11,8 +11,6 @@ Polynomial::~Polynomial () {
 
 bool Polynomial::add (int * addend, int addendSize) {
 
-  cout << "Address of addend: " << addend << endl;
-
   // To store the final answers.
   int * sum;
   int sumSize;
