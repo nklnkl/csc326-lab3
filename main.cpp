@@ -103,23 +103,23 @@ int polynomials () {
         int * coeffs;
         Polynomial * poly1;
         poly1 = new Polynomial();
-        
+
         // Iteration for amount of polynomials to use.
         for (int i = 0; i < 2; i++) {
-          
+
           // Get highest degree for current polynomial and set array as so.
           cout << "Polynomial " << i << "'s highest degree: ";
           cin >> input1;
           input1 +=1;
           coeffs = new int [input1];
-          
+
           // Iterate to get coefficients.
           cout << "From highest to lowest degree, enter the coefficients." << endl;
           for (int i = input1 - 1; i > -1; i--) {
             cout << "coefficient: ";
             cin >> *(coeffs + i);
           }
-          
+
           poly1->add(coeffs, input1);
           cout << poly1->print() << endl;
           delete [] coeffs;
@@ -133,4 +133,6 @@ int polynomials () {
         break;
     }
   }
+
+  return 0;
 }

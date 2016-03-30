@@ -10,21 +10,31 @@ Polynomial::~Polynomial () {
 }
 
 bool Polynomial::add (int * addend, int addendSize) {
+  // To store the final answers.
   int * sum;
   int sumSize;
 
+  // If the current size does not exist or if the addend size is greater.
   if ( !size || addendSize > size)
+    // Set the final size as such.
     sumSize = addendSize;
+  // If the current size is greater.
   else
+    // Set the final size as such.
     sumSize = size;
+  // Allocate the new array with the appropriate size.
   sum = new int [sumSize];
-  
+
+  // Loop through the new array using the new size.
   for (int i = 0; i < sumSize; i++) {
-    *(sum + i) = 0;
-    if (*(addend + i))
-      *(sum + i) += *(addend + i);
+    cout << "Checking *(coefficients + i): " <<  *(coefficients + i) << endl;
+    // If there is a valid value in the current array, add it to the new one.
     if (*(coefficients + i))
       *(sum + i) += *(coefficients + i);
+    // If there is a valid value in the addend array, add it to the new one.
+    cout << "Checking *(addend + i): " <<  *(addend + i) << endl;
+    if (*(addend + i))
+      *(sum + i) += *(addend + i);
   }
 
   delete [] coefficients;
