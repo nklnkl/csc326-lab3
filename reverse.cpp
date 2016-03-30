@@ -6,12 +6,10 @@ Reverse::~Reverse () {};
 int Reverse::rev (int n, int m) {
   switch (m) {
     case 1:
-      if (n > 0) return revI(n);
-      else return -1;
+      return revI(n);
       break;
     case 2:
-      if (n > 0) return revR(n, 0);
-      else return -1;
+      return revR(n, 0);
       break;
     default:
       if (n > 0) return revI(n);
@@ -20,6 +18,7 @@ int Reverse::rev (int n, int m) {
 };
 
 int Reverse::revI (int n) {
+  if (n == 0) return 0;
   int r = 0;
   for ( ; n != 0 ; ) {
     r = r * 10;
