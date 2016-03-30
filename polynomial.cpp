@@ -10,6 +10,9 @@ Polynomial::~Polynomial () {
 }
 
 bool Polynomial::add (int * addend, int addendSize) {
+
+  cout << "Address of addend: " << addend << endl;
+
   // To store the final answers.
   int * sum;
   int sumSize;
@@ -25,16 +28,14 @@ bool Polynomial::add (int * addend, int addendSize) {
   // Allocate the new array with the appropriate size.
   sum = new int [sumSize];
 
-  // Loop through the new array using the new size.
-  for (int i = 0; i < sumSize; i++) {
-    cout << "Checking *(coefficients + i): " <<  *(coefficients + i) << endl;
-    // If there is a valid value in the current array, add it to the new one.
-    if (*(coefficients + i))
-      *(sum + i) += *(coefficients + i);
-    // If there is a valid value in the addend array, add it to the new one.
-    cout << "Checking *(addend + i): " <<  *(addend + i) << endl;
-    if (*(addend + i))
-      *(sum + i) += *(addend + i);
+  // Loop through the new array using the current size.
+  for (int i = 0; i < size; i++) {
+    *(sum + i) = 0;
+    *(sum + i) += *(coefficients + i);
+  }
+  // Loop through the new array using the addend's size.
+  for (int i = 0; i < addendSize; i++) {
+    *(sum + i) += *(addend + i);
   }
 
   delete [] coefficients;

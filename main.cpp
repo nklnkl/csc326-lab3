@@ -98,14 +98,16 @@ int polynomials () {
         break;
 
       case 2:
-        // Declare vars.
+        // Used for input.
         int input1;
-        int * coeffs;
+        // The polynomial to be used for this case.
         Polynomial * poly1;
         poly1 = new Polynomial();
 
         // Iteration for amount of polynomials to use.
         for (int i = 0; i < 2; i++) {
+          // The buffer for the polynomial coefficients.
+          int * coeffs;
 
           // Get highest degree for current polynomial and set array as so.
           cout << "Polynomial " << i << "'s highest degree: ";
@@ -114,7 +116,6 @@ int polynomials () {
           coeffs = new int [input1];
 
           // Iterate to get coefficients.
-          cout << "From highest to lowest degree, enter the coefficients." << endl;
           for (int i = input1 - 1; i > -1; i--) {
             cout << "coefficient: ";
             cin >> *(coeffs + i);
